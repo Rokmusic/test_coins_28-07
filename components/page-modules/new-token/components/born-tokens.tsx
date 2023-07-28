@@ -18,6 +18,8 @@ import Link from 'next/link';
 
 import styles from '../../home/components/home-components.module.css';
 
+import { FakeData, FakeTokenData } from '../../home/data/home.type';
+
 import cake from '@/public/cake.svg';
 // import fire from '@/public/fire-2.svg';
 import star from '@/public/star.svg';

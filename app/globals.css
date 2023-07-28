@@ -188,19 +188,26 @@ td:nth-child(1),
 th:nth-child(1) {
   position: sticky !important;
   border-color: rgb(38 38 38);
-  background-color: #272727;
+  background: linear-gradient(0deg, #1e1e1e, #1e1e1e), linear-gradient(0deg, #272727, #272727);
+
   z-index: 20;
 }
 
 td:nth-child(2),
 th:nth-child(2) {
-  left: 45px;
-  max-width: 115px;
+  left: 42px;
+  max-width: 116px;
+  border-right: 1px solid rgba(39, 39, 39, 1);
+  border-bottom: 1px solid rgba(39, 39, 39, 1);
+  border-left: 1px solid rgba(39, 39, 39, 1);
+  box-shadow: 4px 4px 9px 0px rgba(0, 0, 0, 0.25);
 }
 
 td:nth-child(1),
 th:nth-child(1) {
+  padding: 1px;
   left: 0;
+  border-bottom: 1px solid rgba(39, 39, 39, 1);
 }
 
 .p-datatable-thead tr {

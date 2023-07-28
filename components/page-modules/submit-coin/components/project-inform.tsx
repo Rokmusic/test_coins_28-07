@@ -1,12 +1,14 @@
 'use client';
 
-import React, { FC, useEffect, useRef, useState } from 'react';
+import React, { FC, useEffect } from 'react';
 
 import { Dropdown, DropdownChangeEvent, DropdownProps } from 'primereact/dropdown';
 import { InputText } from 'primereact/inputtext';
 import { InputTextarea } from 'primereact/inputtextarea';
 
 import DatePicker from 'react-datepicker';
+
+import Link from 'next/link';
 
 import { IDataProjectValue, IPojectProps, TSteps, TTypesDataProject } from '../submit-coin.type';
 
@@ -16,10 +18,8 @@ import 'react-datepicker/dist/react-datepicker.css';
 
 import binanceIcon from '@/public/binance.svg';
 import etheriumIcon from '@/public/etherium.svg';
-import TickSquare from '@/components/common/icons/tick-square';
 import Calendar from '@/components/common/icons/calendar';
 import TickCircle from '@/components/common/icons/tick-circle';
-import Link from 'next/link';
 
 const blockchains = [
   { name: 'Binance2', icon: binanceIcon.src },
@@ -159,7 +159,9 @@ const ProjectInform: FC<IPojectProps> = ({
             or submit an update here.
           </span>
           <span>Coin link:</span>
-          <Link href={'#'}>https://coinsgem.com/token/0xEe4056132b0e87950470e03C5B93c919E18be31f</Link>
+          <Link href={'#'}>
+            https://coinsgem.com/token/0xEe4056132b0e87950470e03C5B93c919E18be31f
+          </Link>
         </div>
       ) : (
         <>
@@ -228,8 +230,9 @@ const ProjectInform: FC<IPojectProps> = ({
           <label className={styles.containerToggle}>
             <div
               onClick={() => onChangeHandler('presaleProject', { value: 'change' })}
-              className={`${styles.toggleBtn} ${dataProject.presaleProject.value ? styles.activeKnob : ''
-                }`}
+              className={`${styles.toggleBtn} ${
+                dataProject.presaleProject.value ? styles.activeKnob : ''
+              }`}
             >
               <div className={`${styles.knob}`} />
             </div>

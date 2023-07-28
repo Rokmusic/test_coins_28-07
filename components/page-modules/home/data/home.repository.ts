@@ -1,4 +1,4 @@
-import { FakeData } from './home.type';
+import { FakeData, FakeTokenData } from './home.type';
 
 import telegram from '@/public/telegram.svg';
 // import twitter from '@/public/twitter.svg';
