@@ -5,6 +5,10 @@ import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 import Link from 'next/link';
 
+import { useMedia } from 'use-media';
+
+import { FakeData } from '../data/home.type';
+
 import styles from './home-components.module.css';
 
 import arrowUp from '@/public/arrow-up.svg';
@@ -17,7 +21,7 @@ import TelegramColor from '@/components/common/icons/telegram-color';
 import StarGrey from '@/components/common/icons/star-grey';
 
 const Promoted = () => {
-  // const isMobile = useMedia({ maxWidth: 992 });
+  const isWide = useMedia({ minWidth: 992 });
 
   const getBeautyCount = (count: number) => {
     return count > 1000 ? (count / 1000).toFixed(3) : count;
@@ -148,10 +152,10 @@ const Promoted = () => {
           <DataTable
             dataKey="id"
             value={fakeData}
-            className={styles.tableContainer}
+            className={styles.table}
             lazy
             sortMode="multiple"
-            resizableColumns
+            resizableColumns={!isWide}
             scrollable
           >
             <Column body={starBody} header="" sortable></Column>

@@ -1,4 +1,4 @@
-interface FakeData {
+export interface FakeData {
   id: number;
   name: {
     title: string;
@@ -30,7 +30,7 @@ interface FakeData {
   };
 }
 
-interface FakeTokenData {
+export interface FakeTokenData {
   id: number;
   name: {
     title: string;

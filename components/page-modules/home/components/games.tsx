@@ -9,10 +9,11 @@ import Link from 'next/link';
 import styles from './home-components.module.css';
 
 import gameboy from '@/public/gameboy.svg';
-import binance from '@/public/binance.svg';
-import arrowLeft from '@/public/arrow-left.svg';
-import arrowRight from '@/public/arrow-right.svg';
 import game from '@/assets/images/game.png';
+import LtcIcon from '@/components/common/icons/ltc-icon';
+import Binance24 from '@/components/common/icons/binance-24';
+import ArrowLeft from '@/components/common/icons/arrow-left';
+import ArrowRight from '@/components/common/icons/arrow-roght';
 
 const Slider = dynamic(() => import('react-slick'), { ssr: false });
 
@@ -21,7 +22,7 @@ function PrevArrow(props: any) {
   const { ...res } = props;
   return (
     <div {...res}>
-      <Image src={arrowLeft} alt="arrow-left" />
+      <ArrowLeft />
     </div>
   );
 }
@@ -30,7 +31,7 @@ function NextArrow(props: any) {
   const { ...res } = props;
   return (
     <div {...res}>
-      <Image src={arrowRight} alt="arrow-left" />
+      <ArrowRight />
     </div>
   );
 }
@@ -94,17 +95,20 @@ const GameItem = () => {
       <div className={styles.sliderItem}>
         <div className={styles.slideTop}>
           <Image src={game} alt="game" />
-          <div className={styles.slideCount}>10,6K</div>
         </div>
-        <div className={styles.slideTitle}>Battle-Royal</div>
-
-        <h3 className={styles.slideDesc}>Three Kingdom Battles</h3>
-
-        <button className={styles.slideBtn}>Vote</button>
+        <div className={styles.slideTitle}>
+          Stables <span className={styles.new}> NEW</span>
+        </div>
+        <h3 className={styles.slideDesc}>Open World</h3>
         <div className={styles.slideIcons}>
-          <Image src={binance} alt="binance" />
-          <Image src={binance} alt="binance" />
-          <Image src={binance} alt="binance" />
+          <LtcIcon />
+          <Binance24 />
+        </div>
+        <div className={styles.votesContainer}>
+          <button className={styles.votesBtn}>
+            <span className={styles.votesBtnText}>Vote</span>
+            <span className={styles.votesCount}>{15.531}</span>
+          </button>
         </div>
       </div>
     </Link>

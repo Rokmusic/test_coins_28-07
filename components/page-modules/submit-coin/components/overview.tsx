@@ -14,9 +14,6 @@ import facebookIcon from '@/public/facebook-white.svg';
 import discordIcon from '@/public/discord-white.svg';
 import redditIcon from '@/public/reddit-white.svg';
 import dangerIcon from '@/public/danger.svg';
-import telegramIconXl from '@/public/telegram-link.svg';
-import twitterIconXl from '@/public/twitter-link.svg';
-import facebookIconXl from '@/public/facebook-link.svg';
 
 const Overview: FC<IOverviewProps> = ({ stepFrame, setStep, data }) => {
   const isMobile = useMedia({ maxWidth: 768 });

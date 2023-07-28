@@ -1,8 +1,10 @@
 'use client';
 
 import { Sidebar as SidebarUI } from 'primereact/sidebar';
-import Sidebar from '..';
+
 import { useEffect } from 'react';
+
+import Sidebar from '..';
 
 interface Props {
   isWide: boolean;
@@ -11,7 +13,7 @@ interface Props {
 }
 
 export default function SidebarMobile(props: Props) {
-  const { setVisible, visible, isWide } = props;
+  const { setVisible, visible } = props;
 
   useEffect(() => {
     if (visible) document.body.style.overflow = 'hidden';
@@ -20,12 +22,7 @@ export default function SidebarMobile(props: Props) {
 
   return (
     <div>
-      <SidebarUI
-        showCloseIcon
-        position='right'
-        visible={visible}
-        onHide={() => setVisible(false)}
-      >
+      <SidebarUI showCloseIcon position="right" visible={visible} onHide={() => setVisible(false)}>
         <Sidebar />
       </SidebarUI>
     </div>

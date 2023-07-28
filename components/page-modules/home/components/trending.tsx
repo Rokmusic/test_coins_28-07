@@ -18,16 +18,15 @@ import Link from 'next/link';
 
 import { useMedia } from 'use-media';
 
+import { FakeData } from '../data/home.type';
+
 import styles from './home-components.module.css';
 
 import medal2 from '@/public/medal-star-2.svg';
-import star from '@/public/star.svg';
 import arrowUp from '@/public/arrow-up.svg';
 import arrowUpSecond from '@/public/arrow-up-2.svg';
 import arrowDown from '@/public/arrow-down.svg';
 import arrowDownThird from '@/public/arrow-up-3.svg';
-import arrowLeft from '@/public/arrow-left-2.svg';
-import arrowRight from '@/public/arrow-right-2.svg';
 
 import { fakeData } from '@/components/page-modules/home/data/home.repository';
 import Flash from '@/components/common/icons/flash';
@@ -37,6 +36,10 @@ import Eco from '@/components/common/icons/eco';
 import Diamonds from '@/components/common/icons/diamonds';
 import Flag from '@/components/common/icons/flag';
 import Star from '@/components/common/icons/star';
+import StarGrey from '@/components/common/icons/star-grey';
+import TelegramColor from '@/components/common/icons/telegram-color';
+import ArrowLeft from '@/components/common/icons/arrow-left';
+import ArrowRight from '@/components/common/icons/arrow-roght';
 
 interface Country {
   name: string;
@@ -175,6 +178,10 @@ const Trending = () => {
     }
   };
 
+  const getBeautyCount = (count: number) => {
+    return count > 1000 ? (count / 1000).toFixed(3) : count;
+  };
+
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const selectedCountryTemplate = (option: Country, props: any) => {
     if (option) {
@@ -190,8 +197,8 @@ const Trending = () => {
 
   const starBody = () => {
     return (
-      <div>
-        <Image src={star} className={styles.starIcon} alt="star" />
+      <div className={styles.starIcon}>
+        <StarGrey />
       </div>
     );
   };
@@ -206,10 +213,21 @@ const Trending = () => {
           <div className={styles.nameColumnContent}>
             <Image className={styles.currencyIcon} src={icon} alt={title} />
             <div className={styles.currencyContainer}>
-              <span className={styles.title}>{title}</span>
+              <div className={styles.currency}>
+                <span className={styles.title}>
+                  {title}
+                  {data.name.titleIcons ? (
+                    <div className={styles.titleIconContainer}>
+                      {data.name.titleIcons.map((t, i) => (
+                        <Image key={i} src={t} alt={title} className={styles.titleIcon} />
+                      ))}
+                    </div>
+                  ) : null}
+                </span>
+              </div>
               <div className={styles.sharedContent}>
-                <Image src={shared.icon} alt={String(shared.count)} />
-                <span className={styles.sharedCount}>{shared.count}</span>
+                <TelegramColor />
+                <span className={styles.sharedCount}> {getBeautyCount(shared.count)}</span>
               </div>
             </div>
           </div>
@@ -239,7 +257,7 @@ const Trending = () => {
     return (
       <div className={`${styles.hourContainer} ${pain ? styles.hourPain : ''}`}>
         {percent}%
-        <Image width={18} src={pain ? arrowUp : arrowDown} alt={String(percent)} />
+        <Image width={18} src={pain ? arrowDown : arrowUp} alt={String(percent)} />
       </div>
     );
   };
@@ -252,40 +270,33 @@ const Trending = () => {
     return (
       <div className={`${styles.dayContainer} ${pain ? styles.hourPain : ''}`}>
         {percent}%
-        <Image width={18} src={pain ? arrowUp : arrowDown} alt={String(percent)} />
+        <Image width={18} src={pain ? arrowDown : arrowUp} alt={String(percent)} />
       </div>
     );
   };
 
   const marketBody = (data: FakeData) => {
-    return <div className={styles.marketContainer}>${data.market}K</div>;
+    return <div className={styles.marketContainer}>$ {data.market}</div>;
   };
 
   const volumeBody = (data: FakeData) => {
-    return <div className={styles.marketContainer}>${data.volume}</div>;
+    return <div className={styles.marketContainer}>$ {getBeautyCount(data.volume)}</div>;
   };
 
   const ageBody = (data: FakeData) => {
     return <div className={styles.marketContainer}>{data.age} month</div>;
   };
-
   const votesBody = (data: FakeData) => {
     const {
-      votes: { count, square },
+      votes: { count },
     } = data;
 
     return (
       <div className={styles.votesContainer}>
-        <div className={styles.votesRelative}>
-          <div className={styles.votesFrame}></div>
-          <div className={styles.votesCountContainer}>
-            <div className={styles.votesCount}>{count}K</div>
-            <div className={styles.square}>{square}</div>
-          </div>
-          <div className={styles.votesBtn}>
-            <div className={styles.votesBtnText}>Vote</div>
-          </div>
-        </div>
+        <button className={styles.votesBtn}>
+          <span className={styles.votesBtnText}>Vote</span>
+          <span className={styles.votesCount}>{getBeautyCount(count)}</span>
+        </button>
       </div>
     );
   };
@@ -328,21 +339,19 @@ const Trending = () => {
 
         <div className={styles.trendingDropdownsContainer}>
           <div className={styles.dropdown}>
-            <span className={styles.dropdownTitle}>Network / Chain</span>
             <Dropdown
               dataKey="code"
               value={selectedCountry}
               onChange={(e: DropdownChangeEvent) => setSelectedCountry(e.value)}
               options={countries}
               optionLabel="name"
-              placeholder="All / Pick One"
+              placeholder="Network / Chain"
               valueTemplate={selectedCountryTemplate}
               itemTemplate={countryOptionTemplate}
               className="no-scrollbar"
             />
           </div>
           <div className={styles.dropdown}>
-            <span className={styles.dropdownTitle}>Platform</span>
             <Dropdown
               dataKey="code"
               value={selectedCountry}
@@ -363,9 +372,10 @@ const Trending = () => {
           <DataTable
             dataKey="id"
             value={fakeData}
+            className={styles.tableTrend}
             lazy
             sortMode="multiple"
-            resizableColumns
+            // resizableColumns
             scrollable
           >
             <Column body={starBody} header="" sortable></Column>
@@ -382,7 +392,7 @@ const Trending = () => {
         </div>
         <div className={styles.paginationContainer}>
           <div className={styles.pagination}>
-            <Image src={arrowLeft} alt="arrow-left" className={styles.arrowPagination} />
+            <ArrowLeft />
             <div className={`${styles.pageContainer} ${styles.pageContainerActive}`}>
               <div className={styles.pageItem}>
                 <div className={styles.pageNumber}>1</div>
@@ -408,9 +418,9 @@ const Trending = () => {
                 <div className={styles.pageNumber}>5</div>
               </div>
             </div>
-            <div className={styles.pageContainer}>
+            <div className={`${styles.pageContainer} ${styles.dots}`}>
               <div className={styles.pageItem}>
-                <div className={styles.pageNumber}>...</div>
+                <div className={`${styles.pageNumber}`}>...</div>
               </div>
             </div>
             <div className={styles.pageContainer}>
@@ -418,7 +428,7 @@ const Trending = () => {
                 <div className={styles.pageNumber}>24</div>
               </div>
             </div>
-            <Image src={arrowRight} alt="arrow-right" className={styles.arrowPagination} />
+            <ArrowRight />
           </div>
         </div>
       </div>

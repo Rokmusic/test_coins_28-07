@@ -64,10 +64,12 @@ body {
 .slick-slide > div {
   display: grid;
   place-items: center;
-  width: 80%;
+  width: 94%;
   margin-top: 50px;
   margin: auto;
-  padding: 0px;
+  padding: 24px;
+  background: rgba(24, 24, 24, 1);
+  border-radius: 12px;
 }
 
 .p-sidebar {
@@ -192,8 +194,8 @@ th:nth-child(1) {
 
 td:nth-child(2),
 th:nth-child(2) {
-  left: 41px;
-  min-width: 144px;
+  left: 45px;
+  max-width: 115px;
 }
 
 td:nth-child(1),
@@ -260,7 +262,7 @@ td:last-child {
   width: 100%;
   align-items: center;
   background-color: #ffffff08;
-  font-size: 11px;
+  font-size: 12px;
   outline: none;
   color: #ffffff40;
   padding: 8px 12px;
@@ -461,7 +463,6 @@ td:last-child {
   }
   .p-column-header-content:nth-child(2) {
     justify-content: flex-start;
-    margin-right: 0;
   }
   .p-datatable-thead th:nth-child(1) .p-column-header-content {
     justify-content: flex-start;
@@ -510,6 +511,21 @@ td:last-child {
   margin-right: -2px;
 }
 
+@media (max-width: 992px) {
+  .slick-slide > div {
+    padding: 14px;
+  }
+}
+
+@media (min-width: 729px) {
+  .p-datatable-thead tr th:first-child {
+    border-bottom-left-radius: unset;
+  }
+
+  .p-datatable-thead tr th:last-child {
+    border-bottom-right-radius: unset;
+  }
+}
 @media (min-width: 729px) {
   .p-sidebar {
     margin-top: 175px;
