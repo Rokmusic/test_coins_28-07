@@ -1,3 +1,5 @@
+import { FakeData } from './home.type';
+
 import telegram from '@/public/telegram.svg';
 // import twitter from '@/public/twitter.svg';
 import binance from '@/public/binance-border.svg';
