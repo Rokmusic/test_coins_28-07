@@ -1,0 +1,39 @@
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-bottom: 130px;
+}
+
+.container * {
+    color: #fff;
+}
+
+.container h1 {
+    width: 100%;
+    display: flex;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.frame {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(17, 17, 17, 0.85);
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding-bottom: 150px;
+    }
+    .container h1 {
+        justify-content: center;
+        margin-top: 10px;
+        font-size: 24px;
+    }
+
+}

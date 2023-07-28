@@ -1,0 +1,217 @@
+.modalContainer {
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 43%;
+    height: auto;
+    background: rgba(13, 13, 13, 1);
+    background-position: right 0 top 130px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    z-index: 55;
+}
+
+.modalFrame {
+    aspect-ratio: 1 / 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: auto;
+    width: 97%;
+    height: 97%;
+    padding-top: 29px;
+    padding-bottom: 23px;
+    padding-left: 22px;
+    padding-right: 22px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius: 16px;
+    border: 3px solid;
+    box-shadow: 0px 0px 18px 0px #42457B inset;
+    border-image-source: linear-gradient(135.81deg, #42457B 0%, rgba(66, 69, 123, 0) 69.13%, #42457B 101.45%);
+}
+
+.headline {
+    font-size: 42px;
+    line-height: 47px;
+    padding-right: 80px;
+    font-weight: 600;
+    line-height: 47px;
+    background: linear-gradient(155.72deg, #9C74F1 35.45%, #3600A8 110.07%), #FFFFFF;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+
+.withoutGradient {
+    background: #fff;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+
+.btnClose {
+    position: absolute;
+    top: 29px;
+    right: 26px;
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+    border: 1.5px solid rgba(255, 255, 255, 1)
+}
+
+.headline_3 {
+    margin-top: 0;
+}
+
+.justFrom {
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 18px;
+    letter-spacing: 0em;
+}
+
+.paragraph {
+    padding-right: 250px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: 0em;
+    color: rgba(200, 200, 200, 1) !important;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: auto;
+}
+
+.controls > button {
+    width: calc(50% - 10px);
+    min-height: 65px;
+    padding: 16px 32px 16px 32px;
+    padding-left: 10px;
+    padding-right: 10px;
+    white-space: pre-wrap;
+}
+
+/* .controls > button > a {
+    padding: 16px 32px 16px 32px;
+} */
+
+.promote {
+    position: relative;
+    border-radius: 12px;
+    background: linear-gradient(0deg, #183DD4, #183DD4),
+    linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1));
+    border: 1px solid rgba(255, 255, 255, 0.1)
+}
+
+.linkPromote {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 5;
+}
+
+.no {
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)),
+    linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05));
+}
+
+@media (max-width: 1200px) {
+    .controls * {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 1366px) {
+    .modalContainer {
+        width: 42%;
+    }
+    .paragraph {
+        padding-right: 140px;
+    }
+    .headline {
+        line-height: normal;
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 992px) {
+    .modalContainer {
+        width: 60%;
+    }
+    .controls {
+        margin-top: auto;
+        width: 100%;
+        flex-direction: column-reverse;
+    }
+    .controls > button {
+        width: 80%;
+    }
+    .controls > button:last-child {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .modalContainer {
+        aspect-ratio: unset;
+        width: 80%;
+        height: auto;
+        background-position: bottom;
+    }
+    .controls > button {
+        width: 100%;
+    }
+    .modalFrame {
+        border-radius: 12px;
+        margin-bottom: 6px;
+        padding-bottom: 30px;
+    }
+    .headline_3 {
+        font-size: 16px;
+        padding-right: 40px;
+    }
+    .headline {
+        font-size: 22px;
+        line-height: 32px;
+    }
+    .justFrom {
+        font-size: 16px;
+    }
+    .paragraph {
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 440px) {
+    .modalContainer {
+        width: 96%;
+    }
+    .paragraph {
+        padding: 0;
+    }
+}
