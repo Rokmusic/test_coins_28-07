@@ -31,7 +31,7 @@ import arrowUp from '@/public/arrow-up.svg';
 import arrowDown from '@/public/arrow-down.svg';
 import twitter from '@/public/twitter.svg';
 import telegram from '@/public/telegram.svg';
-import logo from '@/public/logo.svg';
+import logo from '@/assets/images/logo.webp';
 import menu from '@/public/menu.svg';
 import artyfact from '@/public/artyfact.svg';
 
@@ -281,7 +281,11 @@ export default function Header() {
                 <div className={styles.rightBlock}>
                   {isWide && (
                     <div className={styles.searchFull}>
-                      <div className={styles.searchInputContainer}>
+                      <div
+                        className={`${styles.searchInputContainer} ${
+                          isOpenSearch ? styles.searchFocus : ''
+                        }`}
+                      >
                         <div onClick={onClickSearchImage} className={styles.searchInputImage}>
                           {searchText ? <Crossmark /> : <SearchLight />}
                         </div>

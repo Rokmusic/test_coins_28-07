@@ -182,35 +182,8 @@ td.votes {
   padding-bottom: 0.5rem;
 }
 
-td:nth-child(2),
-th:nth-child(2),
-td:nth-child(1),
-th:nth-child(1) {
-  position: sticky !important;
-  border-color: rgb(38 38 38);
-  background: linear-gradient(0deg, #1e1e1e, #1e1e1e), linear-gradient(0deg, #272727, #272727);
-  z-index: 20;
-}
-
-td:nth-child(2),
-th:nth-child(2) {
-  left: 44px;
-  max-width: 116px;
-  border-right: 1px solid rgba(39, 39, 39, 1);
-  border-bottom: 1px solid rgba(39, 39, 39, 1);
-  box-shadow: 4px 4px 9px 0px rgba(0, 0, 0, 0.25);
-  padding: 6px;
-}
-
 table {
   border-spacing: 0;
-}
-
-tr td:nth-child(1),
-th:nth-child(1) {
-  padding: 0;
-  left: 0;
-  border-bottom: 1px solid rgba(39, 39, 39, 1);
 }
 
 tr:last-child td:nth-child(2),
@@ -521,6 +494,32 @@ td:last-child {
 }
 
 @media (max-width: 992px) {
+  td:nth-child(2),
+  th:nth-child(2),
+  td:nth-child(1),
+  th:nth-child(1) {
+    position: sticky !important;
+    border-color: rgb(38 38 38);
+    background: linear-gradient(0deg, #1e1e1e, #1e1e1e), linear-gradient(0deg, #272727, #272727);
+    z-index: 20;
+  }
+
+  td:nth-child(2),
+  th:nth-child(2) {
+    left: 44px;
+    max-width: 116px;
+    border-right: 1px solid rgba(39, 39, 39, 1);
+    border-bottom: 1px solid rgba(39, 39, 39, 1);
+    box-shadow: 4px 4px 9px 0px rgba(0, 0, 0, 0.25);
+    padding: 6px;
+  }
+
+  tr td:nth-child(1),
+  th:nth-child(1) {
+    padding: 0;
+    left: 0;
+    border-bottom: 1px solid rgba(39, 39, 39, 1);
+  }
   .slick-slide > div {
     padding: 10px;
   }
@@ -530,16 +529,13 @@ td:last-child {
   .p-datatable-thead tr th:first-child {
     border-bottom-left-radius: unset;
   }
-}
-
-@media (min-width: 729px) {
-  .p-datatable-thead tr th:first-child {
-    border-bottom-left-radius: unset;
-  }
 
   .p-datatable-thead tr th:last-child {
     border-bottom-right-radius: unset;
   }
+}
+
+@media (min-width: 729px) {
 }
 @media (min-width: 729px) {
   .p-sidebar {
@@ -558,6 +554,19 @@ td:last-child {
 }
 
 @media (max-width: 768px) {
+  .p-datatable-tbody td {
+    height: 40px;
+  }
+  .p-column-title {
+    white-space: nowrap;
+  }
+  .p-datatable-thead tr,
+  .p-datatable-thead tr th {
+    padding-top: 0;
+    padding-bottom: 0;
+    max-height: 53px;
+    height: 53px;
+  }
   span.p-button-label.p-clickable {
     margin-right: 30px;
   }

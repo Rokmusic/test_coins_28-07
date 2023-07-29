@@ -114,6 +114,7 @@
 
 .logo {
   width: 122px;
+  height: 29px;
 }
 
 .social {
@@ -131,11 +132,13 @@
 
 .rightBlock {
   display: flex;
+  align-items: center;
   gap: 12px;
 }
 
 .searchFull {
   display: flex;
+  max-height: 40px;
   gap: 16px;
 }
 
@@ -147,7 +150,11 @@
   padding-right: 12px;
   gap: 8px;
   background-color: #1c1d24d9;
-  border-radius: 6px;
+  border-radius: 12px;
+}
+
+.searchFocus {
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .searchInputImage {
@@ -159,6 +166,10 @@
   border-radius: 8px;
   background-color: #183dd4;
   cursor: pointer;
+}
+
+.searchInputImage:hover {
+  background: rgba(29, 69, 231, 1);
 }
 
 .searchInput {
@@ -446,6 +457,7 @@
   }
   .logo {
     width: auto;
+    height: auto;
   }
   .headerItemContent,
   .currencyInfo,

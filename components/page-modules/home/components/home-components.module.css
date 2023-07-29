@@ -251,6 +251,11 @@
   border-radius: 24px;
 }
 
+.table > div > table,
+.tableTrend > div > table {
+  border-radius: 24px;
+}
+
 .tableContainer > div > div {
 }
 
@@ -718,6 +723,14 @@
 }
 
 @media (max-width: 768px) {
+  .table > div,
+  .table > div > table {
+    border-radius: 12px;
+  }
+  .tableTrend > div,
+  .table > div > table {
+    border-radius: 12px;
+  }
   .pageContainer {
     min-width: 32px;
     height: 32px;
@@ -745,7 +758,11 @@
   }
   .sectionTitleNormal,
   .arrow {
-    margin-bottom: 12px;
+    margin-bottom: 0;
+  }
+  .sectionTitleNormal + img {
+    margin-top: auto;
+    margin-bottom: auto;
   }
   .promotedBtn {
     min-width: 140px;
