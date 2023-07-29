@@ -67,8 +67,7 @@ body {
   width: 94%;
   margin-top: 50px;
   margin: auto;
-  padding: 24px;
-  background: rgba(24, 24, 24, 1);
+  padding: 0 6px;
   border-radius: 12px;
 }
 
@@ -198,10 +197,12 @@ tr:last-child td:nth-child(1) {
 
 .p-datatable-thead tr th:first-child {
   border-bottom-left-radius: 12px;
+  border-top-left-radius: 24px;
 }
 
 .p-datatable-thead tr th:last-child {
   border-bottom-right-radius: 12px;
+  border-top-right-radius: 24px;
   padding-left: 20px;
 }
 
@@ -340,7 +341,6 @@ td:last-child {
 }
 
 .banners .slick-slide {
-  padding: 10px;
   text-align: center;
 }
 
@@ -554,6 +554,13 @@ td:last-child {
 }
 
 @media (max-width: 768px) {
+  .p-datatable-thead tr th:first-child {
+    border-top-left-radius: 12px;
+  }
+
+  .p-datatable-thead tr th:last-child {
+    border-top-right-radius: 12px;
+  }
   .p-datatable-tbody td {
     height: 40px;
   }
