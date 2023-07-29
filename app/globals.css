@@ -393,12 +393,6 @@ td:last-child {
   background-image: none !important;
 }
 
-.gradient404 {
-  background: linear-gradient(90deg, #ffffff 0%, rgba(255, 255, 255, 0.57) 51.56%, #ffffff 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
 .page404 {
   background-image: url('../public/404bg.png');
   background-repeat: no-repeat;
@@ -528,7 +522,7 @@ td:last-child {
 
 @media (max-width: 992px) {
   .slick-slide > div {
-    padding: 14px;
+    padding: 10px;
   }
 }
 

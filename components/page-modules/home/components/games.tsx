@@ -68,6 +68,13 @@ const Games = () => {
           slidesToScroll: 2,
         },
       },
+      {
+        breakpoint: 385,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
     ],
   };
 
