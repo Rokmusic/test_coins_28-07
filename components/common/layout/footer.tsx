@@ -5,12 +5,12 @@ import Link from 'next/link';
 import styles from './footer.module.css';
 
 import logo from '@/public/logo.svg';
-import facebook from '@/public/facebook-link.svg';
-import instagram from '@/public/instagram-link.svg';
-import twitter from '@/public/twitter-link.svg';
-import telegram from '@/public/telegram-link.svg';
-import discord from '@/public/discord-link.svg';
-import medium from '@/public/medium-link.svg';
+import facebook from '@/public/facebook-footer.svg';
+import instagram from '@/public/instagram-footer.svg';
+import twitter from '@/public/twitter-footer.svg';
+import telegram from '@/public/telegram-footer.svg';
+import discord from '@/public/discord-footer.svg';
+import medium from '@/public/medium-footer.svg';
 
 export default function Footer() {
   return (

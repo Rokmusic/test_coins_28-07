@@ -259,7 +259,7 @@
   position: absolute;
   top: 60px;
   left: 0;
-  padding: 12px 12px 0px 12px;
+  padding-top: 12px;
   border-radius: 12px;
   border: 1px solid rgba(32, 32, 32, 1);
   gap: 10px;
@@ -268,6 +268,10 @@
   scrollbar-color: #6969dd #e0e0e0;
   scrollbar-width: thin;
   scrollbar-gutter: stable;
+}
+
+.searchResult {
+  padding: 0 12px;
 }
 
 .searchResultContainer::-webkit-scrollbar {
@@ -285,10 +289,6 @@
   background-color: red;
 }
 
-.searchResult:not(:last-child) {
-  margin-bottom: 6px;
-}
-
 .searchResult:last-child {
   margin-bottom: 12px;
 }
@@ -297,6 +297,11 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
+}
+
+.searchResult:not(:last-child) {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  padding-bottom: 6px;
 }
 
 .searchResult * {
@@ -456,8 +461,8 @@
     display: flex;
   }
   .logo {
-    width: auto;
-    height: auto;
+    width: 163px;
+    height: 39px;
   }
   .headerItemContent,
   .currencyInfo,
