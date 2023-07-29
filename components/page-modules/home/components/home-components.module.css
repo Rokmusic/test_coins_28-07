@@ -70,6 +70,7 @@
 
 .chainContainer {
   display: flex;
+  align-items: center;
   font-size: 10px;
   gap: 8px;
 }
@@ -190,7 +191,7 @@
 
 .sectionTitleContainer {
   display: flex;
-  align-items: center;
+  align-items: inherit;
   gap: 8px;
 }
 
@@ -691,7 +692,57 @@
   }
 }
 
+@media (max-width: 992px) {
+  .votesContainer {
+    padding: 0;
+  }
+  .promotedBtn {
+    padding: 6px 12px 8px 12px;
+    border-radius: 4px;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 15px;
+    text-transform: none;
+  }
+
+  .promotedBtn svg {
+    width: 12px;
+    height: 12px;
+  }
+  .sectionTitleContainer svg {
+    width: 16px;
+    height: 16px;
+    margin-top: -3px;
+  }
+}
+
 @media (max-width: 768px) {
+  .pageContainer {
+    min-width: 32px;
+    height: 32px;
+    padding: 10px 16px 10px 16px;
+    border-radius: 4px;
+    gap: 10px;
+  }
+  .sliderItem > div:last-child button {
+    width: 100%;
+    padding: 10px 24px 10px 24px;
+    border-radius: 12px;
+    gap: 6px;
+  }
+  .title,
+  .marketContainer {
+    font-size: 10px;
+  }
+  .votesCount {
+    border-radius: 4px;
+  }
+  .votesBtn {
+    padding: 3px;
+    border-radius: 4px;
+    gap: 6px;
+  }
   .sectionTitleNormal,
   .arrow {
     margin-bottom: 12px;

@@ -106,8 +106,8 @@ const dropdownItems = [
 ];
 
 const Trending = () => {
+  const isWide = useMedia({ minWidth: 992 });
   const [selectedCountry, setSelectedCountry] = useState<Country | null>(null);
-
   const [selectedTab, setSelectedTab] = useState(0);
 
   // const [first, setFirst] = useState(0);
@@ -216,7 +216,7 @@ const Trending = () => {
               <div className={styles.currency}>
                 <span className={styles.title}>
                   {title}
-                  {data.name.titleIcons ? (
+                  {data.name.titleIcons && isWide ? (
                     <div className={styles.titleIconContainer}>
                       {data.name.titleIcons.map((t, i) => (
                         <Image key={i} src={t} alt={title} className={styles.titleIcon} />
